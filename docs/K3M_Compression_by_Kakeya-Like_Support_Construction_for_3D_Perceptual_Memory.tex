@@ -564,6 +564,23 @@ The current text-memory implementation used in our real-data experiments is not 
 
 Philosophically, this matters because it matches the Kakeya-style inversion emphasized throughout the paper. The goal is not to preserve every token equally well. The goal is to preserve a thin structural support carrying the directions that matter for future recall: preference continuation, allowed/forbidden transitions, causal pivots, and turning points. In this textual setting, a ``direction'' is not a geometric line segment but a structured continuation constraint in memory space. The support archive therefore plays the role of a discrete Kakeya-like set: it is intentionally smaller than the full conversation trace, but still rich enough to cover multiple continuation directions under realistic user queries.
 
+\subsection{Why a Mathematical Layer is Still Necessary Under LLM-Assisted Construction}
+At first glance, one might think that if support construction is delegated to an LLM, then the mathematical layer becomes unnecessary. This is not the view of the present paper. The mathematical layer is still essential because it defines the \emph{object} that the LLM, heuristic extractor, or future learned model is supposed to construct.
+
+The key distinction is between a \emph{construction mechanism} and a \emph{target structure}. An LLM may help propose states, continuations, pivots, or candidate support edges. But without a mathematical description of what counts as a valid support object, those outputs remain only free-form annotations. The role of the mathematical layer is to force these annotations to live in a constrained space:
+\begin{enumerate}[leftmargin=1.5em]
+\item a thin support should be preferred over a dense replay of the entire history,
+\item the support should cover multiple future-useful directions,
+\item the support should admit a compact archive representation,
+\item query-time interaction should occur mainly through support geometry rather than full-history scanning.
+\end{enumerate}
+
+This is precisely why the notation around $K_\delta$, support ratio, junction structure, and support-restricted decoding is not decorative. It turns a prompt-generated summary into a memory object that can be compared, compressed, and evaluated.
+
+There is also an implementation reason. The current best-performing PMS-Bench configuration, \texttt{constraint-edge fixed}, does not rely on online LLM interaction during the benchmark run; it uses an LLM-inspired schema together with a fallback local state-construction path. This would be impossible to interpret coherently if the project had no mathematical layer. The point of the formalism is to make LLM-assisted, heuristic, and future learned constructors interoperable by tying them to the same support-level abstraction.
+
+In that sense, the mathematical layer answers a different question from the LLM. The LLM answers ``how might we propose a support?'' The mathematics answers ``what kind of object must that proposal become in order to count as a K3M memory support?'' The former can change with engineering practice; the latter is the real conceptual content of the method.
+
 \section{Experimental Setup}
 We evaluate K3M under two complementary empirical lenses.
 
