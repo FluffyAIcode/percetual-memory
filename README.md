@@ -36,6 +36,8 @@ The current module centers on:
   Converts source records into benchmark prediction documents.
 - `src/pms_sample_dataset_builder.py`
   Builds curated PMS-Bench benchmark artifacts.
+- `src/cli.py`
+  Minimal unified entrypoint for common benchmark workflows.
 
 ## Current Benchmark Takeaway
 
@@ -57,6 +59,10 @@ See `docs/quickstart.md` for the minimal workflow to:
 - evaluate outputs with PMS-Bench
 - interpret the resulting metrics
 
+For installation and CLI usage, see:
+
+- `docs/installation.md`
+
 ## Positioning
 
 This repository is intended as a standalone perceptual memory package rather than a full general-purpose retrieval stack.
@@ -66,3 +72,10 @@ In short:
 - `AAAK official` measures retrieval realism
 - `PMS-Bench` measures perceptual-memory realism
 - this module is primarily aligned with the second
+
+## Paper Draft
+
+The updated paper draft is included as:
+
+- `docs/K3M_Compression_by_Kakeya-Like_Support_Construction_for_3D_Perceptual_Memory.tex`
+- `docs/K3M_Compression_by_Kakeya-Like_Support_Construction_for_3D_Perceptual_Memory.pdf`
