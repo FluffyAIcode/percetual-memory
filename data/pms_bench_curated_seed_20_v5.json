@@ -1,0 +1,850 @@
+{
+  "benchmark_name": "PMS-Bench",
+  "format_version": "2.0",
+  "items": [
+    {
+      "item_id": "pm_derived_commute_audiobooks_cause",
+      "task_type": "causal_recall",
+      "question": "Why were audiobooks a good fit for my daily routine?",
+      "weak_cues": [
+        "daily commute",
+        "Audible",
+        "45 minutes each way"
+      ],
+      "gold_sessions": [
+        "answer_40a90d51"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_40a90d51",
+          "start_turn": 0,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "audiobooks",
+        "Audible",
+        "commute"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [
+        "the user listens to audiobooks during a daily commute",
+        "the commute takes 45 minutes each way, creating a long listening window",
+        "that commute pattern makes audiobooks a natural fit for the user's routine"
+      ],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "analytic",
+        "mode": "causal_reflection",
+        "uncertainty": 0.2
+      }
+    },
+    {
+      "item_id": "pm_derived_mrs_johnson_surgery_cause",
+      "task_type": "causal_recall",
+      "question": "Why did I bring groceries and flowers to Mrs. Johnson?",
+      "weak_cues": [
+        "Mrs. Johnson",
+        "groceries and flowers",
+        "recovery"
+      ],
+      "gold_sessions": [
+        "answer_fea2e4d3"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_fea2e4d3",
+          "start_turn": 2,
+          "end_turn": 8
+        }
+      ],
+      "gold_entities": [
+        "Mrs. Johnson",
+        "groceries",
+        "flowers"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [
+        "Mrs. Johnson was recovering from surgery",
+        "the user wanted to support her during that recovery",
+        "that is why the user brought groceries and flowers"
+      ],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "analytic",
+        "mode": "causal_reflection",
+        "uncertainty": 0.15
+      }
+    },
+    {
+      "item_id": "pm_derived_cartwheel_preferences_constraint",
+      "task_type": "constraint_recall",
+      "question": "What Cartwheel app changes would best match my stated coupon-management preferences?",
+      "weak_cues": [
+        "Cartwheel app",
+        "coffee creamer",
+        "email inbox"
+      ],
+      "gold_sessions": [
+        "answer_d61669c7"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_d61669c7",
+          "start_turn": 2,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "Target",
+        "Cartwheel"
+      ],
+      "gold_constraints": {
+        "allowed": [
+          "sort_offers_by_expiration_date",
+          "customize_notification_types",
+          "expiring_soon_notifications",
+          "category_specific_notifications"
+        ],
+        "forbidden": [
+          "too_many_generic_notifications"
+        ],
+        "required": [
+          "help_prioritize_expiring_deals",
+          "reduce_notification_overload"
+        ],
+        "actual_next": "sort_offers_by_expiration_date",
+        "status": "satisfied"
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "practical",
+        "mode": "practical_planning",
+        "uncertainty": 0.2
+      }
+    },
+    {
+      "item_id": "pm_derived_budget_boundaries_constraint",
+      "task_type": "constraint_recall",
+      "question": "What shopping changes fit the budget boundaries I wanted to set?",
+      "weak_cues": [
+        "Saks and Neiman Marcus",
+        "affordable alternatives",
+        "beauty box subscription"
+      ],
+      "gold_sessions": [
+        "answer_7cb94507"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_7cb94507",
+          "start_turn": 0,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "Mint",
+        "H&M",
+        "Uniqlo",
+        "discount store"
+      ],
+      "gold_constraints": {
+        "allowed": [
+          "buy_affordable_alternatives",
+          "shop_at_hm_or_uniqlo",
+          "cancel_monthly_beauty_box",
+          "buy_discount_beauty_products"
+        ],
+        "forbidden": [
+          "frequent_high_end_department_store_spending",
+          "unused_subscription_spending"
+        ],
+        "required": [
+          "lower_cost_with_similar_quality",
+          "support_budget_control"
+        ],
+        "actual_next": "buy_affordable_alternatives",
+        "status": "satisfied"
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "practical",
+        "mode": "practical_planning",
+        "uncertainty": 0.2
+      }
+    },
+    {
+      "item_id": "pm_derived_spirituality_turn",
+      "task_type": "turning_point_recall",
+      "question": "What was the turning point in my stance on spirituality?",
+      "weak_cues": [
+        "Buddhism",
+        "synchronicity",
+        "shift from atheist"
+      ],
+      "gold_sessions": [
+        "answer_8f276838"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_8f276838",
+          "start_turn": 0,
+          "end_turn": 0
+        }
+      ],
+      "gold_entities": [
+        "Buddhism",
+        "synchronicity",
+        "atheist"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": {
+        "session_id": "answer_8f276838",
+        "start_turn": 0,
+        "end_turn": 0,
+        "pre_state": "staunch_atheist",
+        "post_state": "exploring_spirituality_through_buddhism_and_synchronicity"
+      },
+      "gold_scene": {
+        "tone": "analytic",
+        "mode": "causal_reflection",
+        "uncertainty": 0.15
+      }
+    },
+    {
+      "item_id": "pm_derived_instagram_limit_turn",
+      "task_type": "turning_point_recall",
+      "question": "What behavior change was I trying to make about my Instagram use?",
+      "weak_cues": [
+        "2 hours per day",
+        "30-minute limit",
+        "doodling during breaks"
+      ],
+      "gold_sessions": [
+        "answer_47ffab4c"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_47ffab4c",
+          "start_turn": 4,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "Instagram",
+        "30 minutes per day",
+        "doodling"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": {
+        "session_id": "answer_47ffab4c",
+        "start_turn": 4,
+        "end_turn": 10,
+        "pre_state": "spending_about_two_hours_per_day_on_instagram",
+        "post_state": "trying_to_limit_instagram_to_thirty_minutes_and_replace_breaks_with_doodling"
+      },
+      "gold_scene": {
+        "tone": "practical",
+        "mode": "practical_planning",
+        "uncertainty": 0.2
+      }
+    },
+    {
+      "item_id": "pm_0006_e47becba",
+      "task_type": "cue_recall",
+      "question": "What degree did I graduate with?",
+      "weak_cues": [
+        "new job",
+        "paperwork",
+        "expense tracking"
+      ],
+      "gold_sessions": [
+        "answer_280352e9"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_280352e9",
+          "start_turn": 2,
+          "end_turn": 6
+        }
+      ],
+      "gold_entities": [
+        "Business Administration"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0007_58bf7951",
+      "task_type": "cue_recall",
+      "question": "What play did I attend at the local community theater?",
+      "weak_cues": [
+        "community theater",
+        "lead actress",
+        "Emily audition"
+      ],
+      "gold_sessions": [
+        "answer_355c48bb"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_355c48bb",
+          "start_turn": 0,
+          "end_turn": 6
+        }
+      ],
+      "gold_entities": [
+        "The Glass Menagerie",
+        "Emily"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0008_1e043500",
+      "task_type": "cue_recall",
+      "question": "What is the name of the playlist I created on Spotify?",
+      "weak_cues": [
+        "ambient and lo-fi",
+        "music and podcasts",
+        "guitar practice"
+      ],
+      "gold_sessions": [
+        "answer_3e012175"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_3e012175",
+          "start_turn": 2,
+          "end_turn": 6
+        }
+      ],
+      "gold_entities": [
+        "Summer Vibes",
+        "Spotify"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "practical",
+        "mode": "practical_planning",
+        "uncertainty": 0.25
+      }
+    },
+    {
+      "item_id": "pm_0009_c5e8278d",
+      "task_type": "turning_point_recall",
+      "question": "What was my last name before I changed it?",
+      "weak_cues": [
+        "johnson",
+        "last",
+        "name"
+      ],
+      "gold_sessions": [
+        "answer_f6168136"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_f6168136",
+          "start_turn": 0,
+          "end_turn": 0
+        }
+      ],
+      "gold_entities": [
+        "johnson"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": {
+        "session_id": "answer_f6168136",
+        "start_turn": 0,
+        "end_turn": 0,
+        "pre_state": null,
+        "post_state": "johnson"
+      },
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0010_6ade9755",
+      "task_type": "event_recall",
+      "question": "Where do I take yoga classes?",
+      "weak_cues": [
+        "yoga",
+        "where",
+        "serenity"
+      ],
+      "gold_sessions": [
+        "answer_9398da02"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_9398da02",
+          "start_turn": 0,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "YOG",
+        "serenity",
+        "yoga"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0011_6f9b354f",
+      "task_type": "event_recall",
+      "question": "What color did I repaint my bedroom walls?",
+      "weak_cues": [
+        "color",
+        "repaint",
+        "bedroom"
+      ],
+      "gold_sessions": [
+        "answer_feb5200f"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_feb5200f",
+          "start_turn": 2,
+          "end_turn": 8
+        }
+      ],
+      "gold_entities": [
+        "lighter",
+        "shade",
+        "gray"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0012_58ef2f1c",
+      "task_type": "turning_point_recall",
+      "question": "When did I volunteer at the local animal shelter's fundraising dinner?",
+      "weak_cues": [
+        "february",
+        "volunteer",
+        "local"
+      ],
+      "gold_sessions": [
+        "answer_59547700"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_59547700",
+          "start_turn": 0,
+          "end_turn": 0
+        }
+      ],
+      "gold_entities": [
+        "february"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": {
+        "session_id": "answer_59547700",
+        "start_turn": 0,
+        "end_turn": 0,
+        "pre_state": null,
+        "post_state": "february_14th"
+      },
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0013_f8c5f88b",
+      "task_type": "cue_recall",
+      "question": "Where did I buy my new tennis racket from?",
+      "weak_cues": [
+        "new tennis racket",
+        "sports shopping",
+        "downtown"
+      ],
+      "gold_sessions": [
+        "answer_c3567066"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_c3567066",
+          "start_turn": 0,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "sports store downtown"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0014_5d3d2817",
+      "task_type": "event_recall",
+      "question": "What was my previous occupation?",
+      "weak_cues": [
+        "marketing",
+        "previous",
+        "occupation"
+      ],
+      "gold_sessions": [
+        "answer_235eb6fb"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_235eb6fb",
+          "start_turn": 4,
+          "end_turn": 10
+        }
+      ],
+      "gold_entities": [
+        "marketing",
+        "specialist",
+        "small"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "practical",
+        "mode": "practical_planning",
+        "uncertainty": 0.25
+      }
+    },
+    {
+      "item_id": "pm_0015_c960da58",
+      "task_type": "event_recall",
+      "question": "How many playlists do I have on Spotify?",
+      "weak_cues": [
+        "spotify",
+        "many",
+        "playlists"
+      ],
+      "gold_sessions": [
+        "answer_e05e4612"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_e05e4612",
+          "start_turn": 0,
+          "end_turn": 8
+        }
+      ],
+      "gold_entities": [],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "practical",
+        "mode": "practical_planning",
+        "uncertainty": 0.25
+      }
+    },
+    {
+      "item_id": "pm_0016_853b0a1d",
+      "task_type": "turning_point_recall",
+      "question": "How old was I when my grandma gave me the silver necklace?",
+      "weak_cues": [
+        "old",
+        "grandma",
+        "gave"
+      ],
+      "gold_sessions": [
+        "answer_69811d4a"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_69811d4a",
+          "start_turn": 0,
+          "end_turn": 0
+        }
+      ],
+      "gold_entities": [],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": {
+        "session_id": "answer_69811d4a",
+        "start_turn": 0,
+        "end_turn": 0,
+        "pre_state": null,
+        "post_state": "18"
+      },
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0017_8a2466db",
+      "task_type": "constraint_recall",
+      "question": "Can you recommend some resources where I can learn more about video editing?",
+      "weak_cues": [
+        "Premiere Pro",
+        "Lumetri Color",
+        "Curves panel"
+      ],
+      "gold_sessions": [
+        "answer_edb03329"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_edb03329",
+          "start_turn": 0,
+          "end_turn": 14
+        }
+      ],
+      "gold_entities": [
+        "Adobe Premiere Pro",
+        "Lumetri Color",
+        "Curves panel"
+      ],
+      "gold_constraints": {
+        "allowed": [
+          "adobe_premiere_pro_resources",
+          "advanced_settings_guides",
+          "lumetri_color_workflows"
+        ],
+        "forbidden": [
+          "general_video_editing_resources",
+          "other_editing_software_resources"
+        ],
+        "required": [
+          "reference_premiere_pro",
+          "cover_advanced_settings"
+        ],
+        "actual_next": "adobe_premiere_pro_resources",
+        "status": "satisfied"
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0018_06878be2",
+      "task_type": "constraint_recall",
+      "question": "Can you suggest some accessories that would complement my current photography setup?",
+      "weak_cues": [
+        "Sony A7R IV",
+        "Godox V1",
+        "flash accessories"
+      ],
+      "gold_sessions": [
+        "answer_555dfb94"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_555dfb94",
+          "start_turn": 0,
+          "end_turn": 6
+        }
+      ],
+      "gold_entities": [
+        "Sony A7R IV",
+        "Godox V1",
+        "Sony HVL-F60RM"
+      ],
+      "gold_constraints": {
+        "allowed": [
+          "sony_compatible_accessories",
+          "high_quality_photography_gear",
+          "flash_protection_or_power_accessories"
+        ],
+        "forbidden": [
+          "other_brand_incompatible_gear",
+          "low_quality_gear"
+        ],
+        "required": [
+          "compatible_with_sony_a7r_iv"
+        ],
+        "actual_next": "sony_compatible_accessories",
+        "status": "satisfied"
+      },
+      "gold_causal_chain": [],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "neutral",
+        "mode": "general_recall",
+        "uncertainty": 0.4
+      }
+    },
+    {
+      "item_id": "pm_0019_1d4e3b97",
+      "task_type": "causal_recall",
+      "question": "I noticed my bike seems to be performing even better during my Sunday group rides. Could there be a reason for this?",
+      "weak_cues": [
+        "Sunday group rides",
+        "chain and cassette replacement",
+        "Garmin bike computer"
+      ],
+      "gold_sessions": [
+        "answer_e6b6353d"
+      ],
+      "gold_spans": [
+        {
+          "session_id": "answer_e6b6353d",
+          "start_turn": 2,
+          "end_turn": 4
+        }
+      ],
+      "gold_entities": [
+        "Garmin bike computer",
+        "chain",
+        "cassette"
+      ],
+      "gold_constraints": {
+        "allowed": [],
+        "forbidden": [],
+        "required": [],
+        "actual_next": null,
+        "status": null
+      },
+      "gold_causal_chain": [
+        "the bike's chain and cassette were replaced on February 1st",
+        "the rider also started using a new Garmin bike computer to track performance",
+        "the improved drivetrain and better ride monitoring explain the stronger Sunday group ride performance"
+      ],
+      "gold_turning_point": null,
+      "gold_scene": {
+        "tone": "analytic",
+        "mode": "causal_reflection",
+        "uncertainty": 0.2
+      }
+    }
+  ]
+}

@@ -1,0 +1,737 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/perceptual-memory-benchmark.schema.json",
+  "title": "Perceptual Memory Benchmark Schema",
+  "description": "Versioned runtime documents for PMS-Bench items, predictions, source records, and results.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/item_document"
+    },
+    {
+      "$ref": "#/$defs/prediction_document"
+    },
+    {
+      "$ref": "#/$defs/source_record_document"
+    },
+    {
+      "$ref": "#/$defs/results_document"
+    }
+  ],
+  "$defs": {
+    "metric_value": {
+      "type": "number"
+    },
+    "metric_map": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/metric_value"
+      }
+    },
+    "span": {
+      "type": "object",
+      "required": [
+        "session_id",
+        "start_turn",
+        "end_turn"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "additionalProperties": false
+    },
+    "constraint_object": {
+      "type": "object",
+      "required": [
+        "allowed",
+        "forbidden",
+        "required",
+        "actual_next",
+        "status"
+      ],
+      "properties": {
+        "allowed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "forbidden": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "actual_next": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "satisfied",
+            "violated",
+            "outside",
+            null
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "scene_object": {
+      "type": "object",
+      "required": [
+        "tone",
+        "mode",
+        "uncertainty"
+      ],
+      "properties": {
+        "tone": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uncertainty": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0.0,
+          "maximum": 1.0
+        }
+      },
+      "additionalProperties": false
+    },
+    "turning_point": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "required": [
+        "session_id",
+        "start_turn",
+        "end_turn",
+        "pre_state",
+        "post_state"
+      ],
+      "properties": {
+        "session_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "end_turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pre_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "post_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "memory_stats": {
+      "type": "object",
+      "properties": {
+        "raw_bytes": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "bytes_used": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "compression_ratio": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "latency_ms": {
+          "type": "number",
+          "minimum": 0.0
+        },
+        "archive_support_ratio": {
+          "type": "number",
+          "minimum": 0.0
+        }
+      },
+      "additionalProperties": true
+    },
+    "benchmark_item": {
+      "type": "object",
+      "required": [
+        "item_id",
+        "task_type",
+        "question",
+        "weak_cues",
+        "gold_sessions",
+        "gold_spans",
+        "gold_entities",
+        "gold_constraints",
+        "gold_causal_chain",
+        "gold_turning_point",
+        "gold_scene"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "task_type": {
+          "type": "string",
+          "enum": [
+            "event_recall",
+            "causal_recall",
+            "turning_point_recall",
+            "constraint_recall",
+            "cue_recall"
+          ]
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weak_cues": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "gold_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "gold_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "gold_entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "gold_constraints": {
+          "$ref": "#/$defs/constraint_object"
+        },
+        "gold_causal_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "gold_turning_point": {
+          "$ref": "#/$defs/turning_point"
+        },
+        "gold_scene": {
+          "$ref": "#/$defs/scene_object"
+        }
+      },
+      "additionalProperties": false
+    },
+    "protocol_prediction": {
+      "type": "object",
+      "properties": {
+        "pred_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "pred_entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_constraints": {
+          "$ref": "#/$defs/constraint_object"
+        },
+        "pred_causal_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_turning_point": {
+          "$ref": "#/$defs/turning_point"
+        },
+        "pred_scene": {
+          "$ref": "#/$defs/scene_object"
+        },
+        "memory_stats": {
+          "$ref": "#/$defs/memory_stats"
+        }
+      }
+    },
+    "progressive_stage_prediction": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/protocol_prediction"
+        },
+        {
+          "type": "object",
+          "required": [
+            "stage"
+          ],
+          "properties": {
+            "stage": {
+              "type": "string",
+              "enum": [
+                "weak_cue",
+                "refined_cue",
+                "full_question"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "progressive_recall_protocol": {
+      "type": "object",
+      "required": [
+        "stages"
+      ],
+      "properties": {
+        "stages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/progressive_stage_prediction"
+          },
+          "minItems": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "structural_perturbation_protocol": {
+      "type": "object",
+      "properties": {
+        "chunk_shuffle": {
+          "$ref": "#/$defs/protocol_prediction"
+        },
+        "relation_shuffle": {
+          "$ref": "#/$defs/protocol_prediction"
+        },
+        "constraint_perturbation": {
+          "$ref": "#/$defs/protocol_prediction"
+        }
+      },
+      "additionalProperties": false
+    },
+    "protocol_runs": {
+      "type": "object",
+      "properties": {
+        "fixed_budget": {
+          "$ref": "#/$defs/protocol_prediction"
+        },
+        "weak_cue": {
+          "$ref": "#/$defs/protocol_prediction"
+        },
+        "progressive_recall": {
+          "$ref": "#/$defs/progressive_recall_protocol"
+        },
+        "structural_perturbation": {
+          "$ref": "#/$defs/structural_perturbation_protocol"
+        }
+      },
+      "additionalProperties": false
+    },
+    "benchmark_prediction": {
+      "type": "object",
+      "required": [
+        "item_id",
+        "pred_sessions",
+        "pred_spans",
+        "pred_entities",
+        "pred_constraints",
+        "pred_causal_chain",
+        "pred_turning_point",
+        "pred_scene",
+        "memory_stats"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "pred_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "pred_entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_constraints": {
+          "$ref": "#/$defs/constraint_object"
+        },
+        "pred_causal_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_turning_point": {
+          "$ref": "#/$defs/turning_point"
+        },
+        "pred_scene": {
+          "$ref": "#/$defs/scene_object"
+        },
+        "protocol_runs": {
+          "$ref": "#/$defs/protocol_runs"
+        },
+        "memory_stats": {
+          "$ref": "#/$defs/memory_stats"
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_record": {
+      "type": "object",
+      "required": [
+        "item_id",
+        "question",
+        "ranked_sessions",
+        "pred_sessions",
+        "pred_spans",
+        "pred_entities",
+        "pred_constraints",
+        "pred_causal_chain",
+        "pred_turning_point",
+        "pred_scene",
+        "memory_stats"
+      ],
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ranked_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_sessions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_spans": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/span"
+          }
+        },
+        "pred_entities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_constraints": {
+          "$ref": "#/$defs/constraint_object"
+        },
+        "pred_causal_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "pred_turning_point": {
+          "$ref": "#/$defs/turning_point"
+        },
+        "pred_scene": {
+          "$ref": "#/$defs/scene_object"
+        },
+        "protocol_runs": {
+          "$ref": "#/$defs/protocol_runs"
+        },
+        "memory_stats": {
+          "$ref": "#/$defs/memory_stats"
+        }
+      },
+      "additionalProperties": false
+    },
+    "task_summary": {
+      "type": "object",
+      "required": [
+        "item_count",
+        "summary"
+      ],
+      "properties": {
+        "item_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "summary": {
+          "$ref": "#/$defs/metric_map"
+        }
+      },
+      "additionalProperties": false
+    },
+    "protocol_summary": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "$ref": "#/$defs/metric_map"
+        },
+        "deltas": {
+          "$ref": "#/$defs/metric_map"
+        },
+        "stage_summaries": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/metric_map"
+          }
+        },
+        "variant_summaries": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/metric_map"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "results_payload": {
+      "type": "object",
+      "required": [
+        "item_count",
+        "missing_prediction_count",
+        "missing_prediction_ids",
+        "summary",
+        "task_summaries",
+        "protocol_summaries",
+        "subscores",
+        "pms_score"
+      ],
+      "properties": {
+        "item_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_prediction_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "missing_prediction_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "summary": {
+          "$ref": "#/$defs/metric_map"
+        },
+        "task_summaries": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/task_summary"
+          }
+        },
+        "protocol_summaries": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/protocol_summary"
+          }
+        },
+        "subscores": {
+          "$ref": "#/$defs/metric_map"
+        },
+        "pms_score": {
+          "type": "number"
+        }
+      },
+      "additionalProperties": false
+    },
+    "item_document": {
+      "type": "object",
+      "required": [
+        "benchmark_name",
+        "format_version",
+        "items"
+      ],
+      "properties": {
+        "benchmark_name": {
+          "const": "PMS-Bench"
+        },
+        "format_version": {
+          "const": "2.0"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/benchmark_item"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "prediction_document": {
+      "type": "object",
+      "required": [
+        "benchmark_name",
+        "format_version",
+        "protocol_default",
+        "predictions"
+      ],
+      "properties": {
+        "benchmark_name": {
+          "const": "PMS-Bench"
+        },
+        "format_version": {
+          "const": "2.0"
+        },
+        "protocol_default": {
+          "type": "string",
+          "enum": [
+            "fixed_budget",
+            "weak_cue",
+            "progressive_recall",
+            "structural_perturbation"
+          ]
+        },
+        "predictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/benchmark_prediction"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_record_document": {
+      "type": "object",
+      "required": [
+        "benchmark_name",
+        "format_version",
+        "records"
+      ],
+      "properties": {
+        "benchmark_name": {
+          "const": "PMS-Bench"
+        },
+        "format_version": {
+          "const": "2.0"
+        },
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source_record"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "results_document": {
+      "type": "object",
+      "required": [
+        "benchmark_name",
+        "format_version",
+        "results"
+      ],
+      "properties": {
+        "benchmark_name": {
+          "const": "PMS-Bench"
+        },
+        "format_version": {
+          "const": "2.0"
+        },
+        "results": {
+          "$ref": "#/$defs/results_payload"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
