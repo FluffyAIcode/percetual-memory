@@ -63,6 +63,17 @@ For installation and CLI usage, see:
 
 - `docs/installation.md`
 
+## Dataset Note
+
+The cleaned LongMemEval dataset is too large for normal GitHub source storage, so it is published as a release asset instead of a tracked repository file:
+
+- `v0.1` asset:
+  `longmemeval_s_cleaned.json`
+
+Download from:
+
+- `https://github.com/FluffyAIcode/percetual-memory/releases/tag/v0.1`
+
 ## Positioning
 
 This repository is intended as a standalone perceptual memory package rather than a full general-purpose retrieval stack.

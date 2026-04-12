@@ -13,6 +13,8 @@ This quickstart covers the smallest useful workflow for the perceptial-memory mo
 
 - Benchmark items:
   `data/pms_bench_curated_seed_20_v5.json`
+- LongMemEval dataset:
+  download `longmemeval_s_cleaned.json` from the `v0.1` release assets
 - Main runner:
   `src/pms_constraint_edge_benchmark.py`
 - Adapter:
@@ -37,6 +39,10 @@ python src/pms_constraint_edge_benchmark.py \
   --force-fallback-extractor \
   --json-out pms_constraint_edge_source.json
 ```
+
+The expected LongMemEval file can be downloaded from:
+
+- `https://github.com/FluffyAIcode/percetual-memory/releases/tag/v0.1`
 
 ### 2. Adapt source records into predictions
 
