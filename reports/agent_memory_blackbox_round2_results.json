@@ -1,0 +1,96 @@
+{
+  "python": "3.12.3",
+  "results": [
+    {
+      "category": "stress",
+      "duration_s": 70.97084128700044,
+      "metrics": {
+        "avg_gate": 0.564429,
+        "rounds": 2,
+        "sample_outputs": {
+          "cooking": "The chef prepared culinary chef increased pastry chefs reduced mission of reduce pasta cook and musicals, the team.\n a",
+          "finance": "The market outlook musical market the mission of increased a, and reduce in that is an-\n. to be all",
+          "music": "The piano performance musical music the mission of increased, and reduce a- or in this reduced to be more that is",
+          "space": "The space telescope planets around musicals mission- the and increased. reduce team of a, that's\n in this"
+        },
+        "total_generations": 8,
+        "total_writes": 24
+      },
+      "scenario_id": "R2-STRESS-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Completed repeated write/generate pressure loop without crash.",
+      "title": "repeated write/generate pressure"
+    },
+    {
+      "category": "long-text",
+      "duration_s": 63.66024329799984,
+      "metrics": {
+        "gate": 0.293301,
+        "keyword_hits": [
+          "concert",
+          "music",
+          "musical",
+          "piano",
+          "practice",
+          "theory"
+        ],
+        "long_text_chars": 4099,
+        "output": "The piano performance piano Music Practice music practice musical theory concerting hard, night and hours of the morning hour\n a- in this evening The"
+      },
+      "scenario_id": "R2-LONG-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Long memory write remained usable for downstream generation.",
+      "title": "long memory write grounding"
+    },
+    {
+      "category": "cross-domain",
+      "duration_s": 65.58546234499954,
+      "metrics": {
+        "music_foreign_hits": [
+          "mission",
+          "planet"
+        ],
+        "music_output": "The piano performance musical music the mission of a, and planets-\n. in that is an all other's to",
+        "music_own_hits": [
+          "music",
+          "musical"
+        ],
+        "space_foreign_hits": [
+          "music",
+          "musical",
+          "theory"
+        ],
+        "space_output": "The space telescope planets beyond the musical theory of a- and mission\n, in that is an all other. to",
+        "space_own_hits": [
+          "mission",
+          "planet"
+        ]
+      },
+      "scenario_id": "R2-CROSS-01",
+      "status": "WARN",
+      "suite": "representative",
+      "summary": "Dual-domain run showed contamination or weak own-domain separation.",
+      "title": "dual-domain contamination diagnostic"
+    },
+    {
+      "category": "stability",
+      "duration_s": 121.19981672600079,
+      "metrics": {
+        "output": "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has",
+        "prompt": "The piano performance"
+      },
+      "scenario_id": "R2-STABLE-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Fresh seeded instances were exactly deterministic under greedy generation.",
+      "title": "fresh instance determinism"
+    }
+  ],
+  "suite": "representative",
+  "target_path": "/home/ubuntu/.cursor/projects/workspace/uploads/AgentMemorySystem.md",
+  "torch": "2.11.0+cu130",
+  "total_duration_s": 321.41653306199987,
+  "transformers": "4.57.6"
+}
