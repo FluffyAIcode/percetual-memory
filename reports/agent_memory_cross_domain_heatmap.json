@@ -1,0 +1,368 @@
+{
+  "avg_gate": 0.564429484307766,
+  "duration_s": 75.81960409800013,
+  "matrix": {
+    "cooking::p1": {
+      "cooking": {
+        "count": 1,
+        "hits": [
+          "chef"
+        ]
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 2,
+        "hits": [
+          "music",
+          "musical"
+        ]
+      },
+      "space": {
+        "count": 0,
+        "hits": []
+      }
+    },
+    "cooking::p2": {
+      "cooking": {
+        "count": 1,
+        "hits": [
+          "pasta"
+        ]
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 3,
+        "hits": [
+          "music",
+          "musical",
+          "practice"
+        ]
+      },
+      "space": {
+        "count": 0,
+        "hits": []
+      }
+    },
+    "cooking::p3": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 0,
+        "hits": []
+      },
+      "space": {
+        "count": 0,
+        "hits": []
+      }
+    },
+    "finance::p1": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 1,
+        "hits": [
+          "market"
+        ]
+      },
+      "music": {
+        "count": 2,
+        "hits": [
+          "music",
+          "musical"
+        ]
+      },
+      "space": {
+        "count": 1,
+        "hits": [
+          "mission"
+        ]
+      }
+    },
+    "finance::p2": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 1,
+        "hits": [
+          "portfolio"
+        ]
+      },
+      "music": {
+        "count": 0,
+        "hits": []
+      },
+      "space": {
+        "count": 0,
+        "hits": []
+      }
+    },
+    "finance::p3": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 0,
+        "hits": []
+      },
+      "space": {
+        "count": 0,
+        "hits": []
+      }
+    },
+    "music::p1": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 2,
+        "hits": [
+          "music",
+          "musical"
+        ]
+      },
+      "space": {
+        "count": 1,
+        "hits": [
+          "mission"
+        ]
+      }
+    },
+    "music::p2": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 3,
+        "hits": [
+          "music",
+          "musical",
+          "violin"
+        ]
+      },
+      "space": {
+        "count": 0,
+        "hits": []
+      }
+    },
+    "music::p3": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 3,
+        "hits": [
+          "music",
+          "musical",
+          "theory"
+        ]
+      },
+      "space": {
+        "count": 1,
+        "hits": [
+          "mission"
+        ]
+      }
+    },
+    "space::p1": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 2,
+        "hits": [
+          "music",
+          "musical"
+        ]
+      },
+      "space": {
+        "count": 3,
+        "hits": [
+          "mission",
+          "orbit",
+          "planet"
+        ]
+      }
+    },
+    "space::p2": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 0,
+        "hits": []
+      },
+      "space": {
+        "count": 2,
+        "hits": [
+          "mission",
+          "planet"
+        ]
+      }
+    },
+    "space::p3": {
+      "cooking": {
+        "count": 0,
+        "hits": []
+      },
+      "finance": {
+        "count": 0,
+        "hits": []
+      },
+      "music": {
+        "count": 2,
+        "hits": [
+          "music",
+          "musical"
+        ]
+      },
+      "space": {
+        "count": 2,
+        "hits": [
+          "mission",
+          "planet"
+        ]
+      }
+    }
+  },
+  "model_name": "gpt2",
+  "outputs": {
+    "cooking::p1": {
+      "output": "The chef prepared culinary chef of increased pastry, musical the team and reduce a.\n- or that's in this",
+      "prompt": "The chef prepared"
+    },
+    "cooking::p2": {
+      "output": "The pasta course pasta practice musical, the team of a and increased by an- or in that is to be all",
+      "prompt": "The pasta course"
+    },
+    "cooking::p3": {
+      "output": "The dessert service service services team and increased the information, a new- is an in that's.\n of it",
+      "prompt": "The dessert service"
+    },
+    "finance::p1": {
+      "output": "The market outlook musical market the mission of increased a, and reduce in that is an-\n. to be all",
+      "prompt": "The market outlook"
+    },
+    "finance::p2": {
+      "output": "The portfolio manager increased portfolio management team the and reduced a, or that's reduce stock-\n. in this is",
+      "prompt": "The portfolio manager"
+    },
+    "finance::p3": {
+      "output": "The quarterly earnings call increased reduce the team and reduced-, a decreased in this lowered its\n. of an all that",
+      "prompt": "The quarterly earnings call"
+    },
+    "music::p1": {
+      "output": "The piano performance musical music the mission of increased, and reduce a- or in this reduced to be more that is",
+      "prompt": "The piano performance"
+    },
+    "music::p2": {
+      "output": "The violin recital violin musical music the team, a- and increased in this is an all of that's.\n",
+      "prompt": "The violin recital"
+    },
+    "music::p3": {
+      "output": "The music theory lesson theory musical mission of the \" and increased., a-\n in this is an I am more",
+      "prompt": "The music theory lesson"
+    },
+    "space::p1": {
+      "output": "The space telescope planets orbit around musical- the team, and mission of increased to reduce a. in that's\n",
+      "prompt": "The space telescope"
+    },
+    "space::p2": {
+      "output": "The Mars mission mission missions planets. Mission Missions mission\n reduce team of the world, and increased to a- or",
+      "prompt": "The Mars mission"
+    },
+    "space::p3": {
+      "output": "The orbital research team mission team musical. increased the planets and reduce, a- or in this is an all of that",
+      "prompt": "The orbital research team"
+    }
+  },
+  "own_vs_foreign": {
+    "cooking": {
+      "foreign_hits_count": 5,
+      "foreign_to_own_ratio": 2.5,
+      "own_hits_count": 2,
+      "verdict": "high-contamination"
+    },
+    "finance": {
+      "foreign_hits_count": 3,
+      "foreign_to_own_ratio": 1.5,
+      "own_hits_count": 2,
+      "verdict": "high-contamination"
+    },
+    "music": {
+      "foreign_hits_count": 2,
+      "foreign_to_own_ratio": 0.25,
+      "own_hits_count": 8,
+      "verdict": "mixed"
+    },
+    "space": {
+      "foreign_hits_count": 4,
+      "foreign_to_own_ratio": 0.5714285714285714,
+      "own_hits_count": 7,
+      "verdict": "mixed"
+    }
+  },
+  "prompt_rows": [
+    "music::p1",
+    "music::p2",
+    "music::p3",
+    "space::p1",
+    "space::p2",
+    "space::p3",
+    "finance::p1",
+    "finance::p2",
+    "finance::p3",
+    "cooking::p1",
+    "cooking::p2",
+    "cooking::p3"
+  ],
+  "python": "3.12.3",
+  "target_path": "/home/ubuntu/.cursor/projects/workspace/uploads/AgentMemorySystem.md",
+  "torch": "2.11.0+cu130",
+  "transformers": "4.57.6"
+}

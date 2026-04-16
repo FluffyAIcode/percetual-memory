@@ -1,0 +1,229 @@
+{
+  "aggregation_mode": "representative-plus-full-only-scenarios",
+  "python": "3.12.3",
+  "results": [
+    {
+      "category": "stress",
+      "duration_s": 70.97084128700044,
+      "metrics": {
+        "avg_gate": 0.564429,
+        "rounds": 2,
+        "sample_outputs": {
+          "cooking": "The chef prepared culinary chef increased pastry chefs reduced mission of reduce pasta cook and musicals, the team.\n a",
+          "finance": "The market outlook musical market the mission of increased a, and reduce in that is an-\n. to be all",
+          "music": "The piano performance musical music the mission of increased, and reduce a- or in this reduced to be more that is",
+          "space": "The space telescope planets around musicals mission- the and increased. reduce team of a, that's\n in this"
+        },
+        "total_generations": 8,
+        "total_writes": 24
+      },
+      "scenario_id": "R2-STRESS-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Completed repeated write/generate pressure loop without crash.",
+      "title": "repeated write/generate pressure"
+    },
+    {
+      "category": "stress",
+      "duration_s": 194.665789562001,
+      "metrics": {
+        "avg_gate": 0.564429,
+        "cycle_outputs": [
+          {
+            "cooking": "The chef prepared culinary chef increased pastry chefs reduced mission of reduce pasta cook and musicals, the team.\n a",
+            "finance": "The market outlook musical market the mission of increased a, and reduce in that's reduced to be more\n- or",
+            "music": "The piano performance musical music the mission of increased, and reduce a- or in this reduced to be more that is",
+            "space": "The space telescope planets orbit around musical- the team, and mission of increased to reduce a. in that's\n"
+          },
+          {
+            "cooking": "The chef prepared culinary chef increased pastry chefs reduced mission of reduce pasta cook and musicals, the team.\n a",
+            "finance": "The market outlook musical market the mission of increased a, and reduce in that is an-\n. to be all",
+            "music": "The piano performance musical music the mission of increased, and reduce a- or in this reduced to be more that is",
+            "space": "The space telescope planets around musicals mission- the and increased. reduce team of a, that's\n in this"
+          }
+        ],
+        "cycles": 2
+      },
+      "scenario_id": "R2-STRESS-02",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Repeated save/load cycles preserved externally valid generation behavior.",
+      "title": "repeated save/load pressure"
+    },
+    {
+      "category": "long-text",
+      "duration_s": 63.66024329799984,
+      "metrics": {
+        "gate": 0.293301,
+        "keyword_hits": [
+          "concert",
+          "music",
+          "musical",
+          "piano",
+          "practice",
+          "theory"
+        ],
+        "long_text_chars": 4099,
+        "output": "The piano performance piano Music Practice music practice musical theory concerting hard, night and hours of the morning hour\n a- in this evening The"
+      },
+      "scenario_id": "R2-LONG-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Long memory write remained usable for downstream generation.",
+      "title": "long memory write grounding"
+    },
+    {
+      "category": "long-text",
+      "duration_s": 68.71787648099962,
+      "metrics": {
+        "output_chars": 4186,
+        "prompt_chars": 4139
+      },
+      "scenario_id": "R2-LONG-02",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Long prompt generation completed without crashing.",
+      "title": "long prompt resilience"
+    },
+    {
+      "category": "cross-domain",
+      "duration_s": 65.58546234499954,
+      "metrics": {
+        "music_foreign_hits": [
+          "mission",
+          "planet"
+        ],
+        "music_output": "The piano performance musical music the mission of a, and planets-\n. in that is an all other's to",
+        "music_own_hits": [
+          "music",
+          "musical"
+        ],
+        "space_foreign_hits": [
+          "music",
+          "musical",
+          "theory"
+        ],
+        "space_output": "The space telescope planets beyond the musical theory of a- and mission\n, in that is an all other. to",
+        "space_own_hits": [
+          "mission",
+          "planet"
+        ]
+      },
+      "scenario_id": "R2-CROSS-01",
+      "status": "WARN",
+      "suite": "representative",
+      "summary": "Dual-domain run showed contamination or weak own-domain separation.",
+      "title": "dual-domain contamination diagnostic"
+    },
+    {
+      "category": "cross-domain",
+      "duration_s": 68.97480458300015,
+      "metrics": {
+        "matrix": {
+          "cooking": {
+            "cooking": [
+              "chef",
+              "pasta"
+            ],
+            "finance": [],
+            "music": [
+              "music",
+              "musical"
+            ],
+            "space": [
+              "mission"
+            ]
+          },
+          "finance": {
+            "cooking": [],
+            "finance": [
+              "market"
+            ],
+            "music": [
+              "music",
+              "musical"
+            ],
+            "space": [
+              "mission"
+            ]
+          },
+          "music": {
+            "cooking": [],
+            "finance": [],
+            "music": [
+              "music",
+              "musical"
+            ],
+            "space": [
+              "mission"
+            ]
+          },
+          "space": {
+            "cooking": [],
+            "finance": [],
+            "music": [
+              "music",
+              "musical"
+            ],
+            "space": [
+              "mission",
+              "orbit",
+              "planet"
+            ]
+          }
+        }
+      },
+      "scenario_id": "R2-CROSS-02",
+      "status": "WARN",
+      "suite": "full",
+      "summary": "Four-way contamination matrix detected cross-domain bleed or weak own-domain signal.",
+      "title": "four-domain contamination matrix"
+    },
+    {
+      "category": "stability",
+      "duration_s": 121.19981672600079,
+      "metrics": {
+        "output": "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has",
+        "prompt": "The piano performance"
+      },
+      "scenario_id": "R2-STABLE-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Fresh seeded instances were exactly deterministic under greedy generation.",
+      "title": "fresh instance determinism"
+    },
+    {
+      "category": "stability",
+      "duration_s": 65.30302968500109,
+      "metrics": {
+        "outputs": [
+          "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has",
+          "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has",
+          "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has"
+        ]
+      },
+      "scenario_id": "R2-STABLE-02",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Repeated greedy calls on the same instance were identical.",
+      "title": "same instance repeatability"
+    },
+    {
+      "category": "stability",
+      "duration_s": 131.99397509499977,
+      "metrics": {
+        "output": "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has"
+      },
+      "scenario_id": "R2-STABLE-03",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Greedy output stayed exactly stable across save/load roundtrip.",
+      "title": "save/load exactness"
+    }
+  ],
+  "suite": "full",
+  "target_path": "/home/ubuntu/.cursor/projects/workspace/uploads/AgentMemorySystem.md",
+  "torch": "2.11.0+cu130",
+  "total_duration_s": 851.0718390620023,
+  "transformers": "4.57.6"
+}

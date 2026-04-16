@@ -1,0 +1,165 @@
+{
+  "aggregation_mode": "per-scenario-execution",
+  "python": "3.12.3",
+  "results": [
+    {
+      "category": "boundary-input",
+      "duration_s": 61.6888816799983,
+      "metrics": {},
+      "scenario_id": "R3-BOUND-01",
+      "status": "FAIL",
+      "suite": "representative",
+      "summary": "RuntimeError: cannot reshape tensor of 0 elements into shape [1, 0, -1, 64] because the unspecified dimension size -1 can be any value and is ambiguous",
+      "title": "empty prompt generation"
+    },
+    {
+      "category": "boundary-input",
+      "duration_s": 60.232560045002174,
+      "metrics": {
+        "output": "A the I ami- \"I-k, ands"
+      },
+      "scenario_id": "R3-BOUND-02",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Single-character prompt generation remained valid.",
+      "title": "single-character prompt generation"
+    },
+    {
+      "category": "boundary-input",
+      "duration_s": 57.94982666999931,
+      "metrics": {
+        "output": "   ia the world, I- The other\n ("
+      },
+      "scenario_id": "R3-BOUND-03",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Whitespace prompt generation completed.",
+      "title": "whitespace prompt generation"
+    },
+    {
+      "category": "boundary-input",
+      "duration_s": 61.2545259260005,
+      "metrics": {
+        "output": "Line one.\nLine two. the I have a,\n"
+      },
+      "scenario_id": "R3-BOUND-04",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Multi-line prompt generation completed.",
+      "title": "multiline prompt generation"
+    },
+    {
+      "category": "abnormal-input",
+      "duration_s": 59.29971606500112,
+      "metrics": {
+        "error_message": "You need to specify either `text` or `text_target`.",
+        "error_type": "ValueError"
+      },
+      "scenario_id": "R3-ABN-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "write(None, ...) raised an externally visible exception as expected.",
+      "title": "write None input"
+    },
+    {
+      "category": "abnormal-input",
+      "duration_s": 62.671864920997905,
+      "metrics": {
+        "error_message": "You need to specify either `text` or `text_target`.",
+        "error_type": "ValueError"
+      },
+      "scenario_id": "R3-ABN-02",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "generate(None, ...) raised an externally visible exception as expected.",
+      "title": "generate None input"
+    },
+    {
+      "category": "abnormal-input",
+      "duration_s": 66.16167209299965,
+      "metrics": {
+        "output": "Hello"
+      },
+      "scenario_id": "R3-ABN-03",
+      "status": "WARN",
+      "suite": "full",
+      "summary": "Negative mt returned the original prompt without explicit validation.",
+      "title": "negative max tokens handling"
+    },
+    {
+      "category": "abnormal-input",
+      "duration_s": 61.27568913600044,
+      "metrics": {
+        "error_message": "[Errno 2] No such file or directory: '/tmp/agent-memory-nonexistent-file.pt'",
+        "error_type": "FileNotFoundError"
+      },
+      "scenario_id": "R3-ABN-04",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "load_memory() on a missing path raised an externally visible exception.",
+      "title": "load missing memory file"
+    },
+    {
+      "category": "performance",
+      "duration_s": 61.66670775899911,
+      "metrics": {
+        "cold_load_s": 61.623
+      },
+      "scenario_id": "R3-PERF-01",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Cold load latency baseline recorded.",
+      "title": "cold load latency baseline"
+    },
+    {
+      "category": "performance",
+      "duration_s": 61.81413885800066,
+      "metrics": {
+        "avg_write_s": 0.081,
+        "max_write_s": 0.181,
+        "min_write_s": 0.028,
+        "write_count": 3
+      },
+      "scenario_id": "R3-PERF-02",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Write latency baseline recorded.",
+      "title": "write latency baseline"
+    },
+    {
+      "category": "performance",
+      "duration_s": 64.73673818600219,
+      "metrics": {
+        "avg_generate_s": 0.957,
+        "generate_count": 3,
+        "max_generate_s": 1.002,
+        "min_generate_s": 0.887,
+        "sample_output": "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has"
+      },
+      "scenario_id": "R3-PERF-03",
+      "status": "PASS",
+      "suite": "representative",
+      "summary": "Generate latency baseline recorded.",
+      "title": "generate latency baseline"
+    },
+    {
+      "category": "performance",
+      "duration_s": 119.6933355800029,
+      "metrics": {
+        "load_s": 0.003,
+        "sample_output": "The piano performance musical music the and violin, a- is an in that's.\n The other \" it has",
+        "save_s": 0.002
+      },
+      "scenario_id": "R3-PERF-04",
+      "status": "PASS",
+      "suite": "full",
+      "summary": "Save/load latency baseline recorded.",
+      "title": "save/load latency baseline"
+    }
+  ],
+  "suite": "full",
+  "target_path": "/home/ubuntu/.cursor/projects/workspace/uploads/AgentMemorySystem.md",
+  "torch": "2.11.0+cu130",
+  "total_duration_s": 798.4456569190043,
+  "transformers": "4.57.6"
+}
